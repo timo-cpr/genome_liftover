@@ -1,2 +1,2 @@
 # genome_liftover
-Scripts for performing liftover between different genome builds
+Script for performing liftover between different genome builds
