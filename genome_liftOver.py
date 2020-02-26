@@ -1,5 +1,5 @@
 '''
-	Script which performs lifts over from different genome builds
+	Script which performs liftover from different genome builds
 	
 	# Developed by: Peter Bruun-Rasmussen
 	# Feel free to contact me for questions
