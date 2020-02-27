@@ -72,9 +72,6 @@ def liftover():
 	lo = LiftOver(args.liftover)
 	data[["CHR","BP","STRAND"]] = data.apply(_l,liftover=lo,axis=1)
 	print("-- liftOver Done --")
-
-	# Convert updated BP to integer
-	data["BP"] = data["BP"].astype(int)
 	
 	if not args.keep_old:
 		# Drop old coordinates
