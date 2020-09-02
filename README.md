@@ -2,7 +2,7 @@
 Script for performing liftover between different genome builds of GWAS summary data.
 
 ## Example for running code from commandline:
-python genome_liftover.py --infile {INFILE_PATH} --outfile {OUTFILE_PATH}  --idxCHR {index_of_chr_column} --idxBP {index_of_BP_column}  --liftover {PATH_TO_LIFTOVER_CHAIN_FILE}   
+python genome_liftover.py --infile {INFILE_PATH} --outfile {OUTFILE_PATH}  --idxCHR {index_of_chr_column} --idxBP {index_of_BP_column}    --liftover {PATH_TO_LIFTOVER_CHAIN_FILE}   
 
 ### Additional input arguments
 --sep, help="File separator",default = "\t".     
