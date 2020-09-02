@@ -10,8 +10,8 @@ python genome_liftover.py --infile {INFILE_PATH} --outfile {OUTFILE_PATH} --idxC
 
 When assigning column indexes (--idxCHR/--idxBP) zero-indexing is used. Meaning that the first column of your data file is column 0.
 ### Required input arguments
---infile, help="Summary data file perform liftOver on",required=True.    
---outfile, help="Where to save the output file with liftover CHR,BP and STRAND", required=True.   
+--infile, help="Summary data file to perform liftover on",required=True.    
+--outfile, help="Where to save the output file with liftover CHR, BP, and STRAND", required=True.   
 --idxCHR, help="zero-index coloumn number of chromosome column",default = 1.    
 --idxBP, help="zero-index coloumn number of basepair-position column",default = 2.     
 --liftover, help="File with liftover chain", default = 'hg38ToHg19.over.chain.gz',required=True.      
