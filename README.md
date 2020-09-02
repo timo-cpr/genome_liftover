@@ -6,8 +6,8 @@ python genome_liftover.py --infile {INFILE_PATH} --outfile {OUTFILE_PATH}  --idx
 
 ### Additional input arguments
 --sep, help="File separator",default = "\t".     
---idxCHR, help="zero-index coloumn number of chr",default = 1.    
---idxBP, help="zero-index coloumn number of Basepair position",default = 2.   
+--idxCHR, help="zero-index coloumn number of chromosome column",default = 1.    
+--idxBP, help="zero-index coloumn number of basepair-position column",default = 2.   
 --keep_old",help="If old coordinates should be kept. False: drop , True: keep, default = False, choices=[True, False].   
 ### Required input arguments
 --liftover, help="File with liftover chain", default = 'hg38ToHg19.over.chain.gz',required=True.   
