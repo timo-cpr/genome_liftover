@@ -5,7 +5,7 @@ Script for performing liftover between different genome builds
 python genome_liftover.py --infile {INFILE_PATH} --outfile {OUTFILE_PATH}  --idxCHR 1 --idxBP 2 --liftover {PATH_TO_LIFTOVER_CHAIN_FILE} \
 
 # Additional input arguments
---sep, help="File separator",default = "\t"
+--sep, help="File separator",default = "\t" \n
 --idxCHR, help="zero-index coloumn number of chr",default = 1
 --idxBP, help="zero-index coloumn number of Basepair position",default = 2
 --keep_old",help="If old coordinates should be kept. False: drop , True: keep, default = False, choices=[True, False]
