@@ -46,7 +46,7 @@ def _l(row,liftover):
 def liftover():
 	# Load GWAS results
 	print("-- Loading file : "+args.infile+" -- ")
-	data = pd.read_csv(args.infile,sep=args.sep,dtype=str)
+	data = pd.read_csv(args.infile,sep=args.sep,dtype=str,index_col=False)
 
 	## Preprocess
 	print("-- Formating file --")
