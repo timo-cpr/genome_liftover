@@ -1,5 +1,5 @@
 '''
-	Script which performs liftover from different genome builds
+	Script which performs lifts over from different genome builds
 	
 	# Developed by: Peter Bruun-Rasmussen
 	# Feel free to contact me for questions
@@ -46,7 +46,7 @@ def _l(row,liftover):
 def liftover():
 	# Load GWAS results
 	print("-- Loading file : "+args.infile+" -- ")
-	data = pd.read_csv(args.infile,sep=args.sep,dtype=str,index_col=False)
+	data = pd.read_csv(args.infile,sep=args.sep,dtype=str)
 
 	## Preprocess
 	print("-- Formating file --")
@@ -57,12 +57,13 @@ def liftover():
 	data.rename({chr_name:"CHR_old",BP_name:"BP_old"},axis=1,inplace=True)
 
 	# Put "chr" in front on CHR column
-	mask_chr = data["CHR_old"].str.contains("(?i)chr",regex=True)
-	data.loc[~mask_chr,"CHR_old"] = data.loc[~mask_chr,"CHR_old"].apply(lambda x: "chr" + str(x)) 
+	#mask_chr = data["CHR_old"].str.contains("(?i)chr",regex=True)
+	data.loc[~data["CHR_old"].str.contains("(?i)chr",regex=True),"CHR_old"] = data.loc[~data["CHR_old"].str.contains("(?i)chr",regex=True),"CHR_old"].apply(lambda x: "chr" + str(x)) 
 	# Set all chr to lowercase
 	data["CHR_old"] = data["CHR_old"].str.lower()
 	# replace chr23 with chrX
 	data["CHR_old"].replace("chr23","chrX",inplace=True)
+	data["CHR_old"].replace("chrx","chrX",inplace=True)
 
 	# Convert BP to integer
 	data["BP_old"] = data["BP_old"].astype(int)
@@ -72,7 +73,10 @@ def liftover():
 	lo = LiftOver(args.liftover)
 	data[["CHR","BP","STRAND"]] = data.apply(_l,liftover=lo,axis=1)
 	print("-- liftOver Done --")
-	
+
+	# Convert BP to integer
+	data["BP"] = data["BP"].astype(int)
+
 	if not args.keep_old:
 		# Drop old coordinates
 		data.drop(["CHR_old","BP_old"],axis=1,inplace=True)
