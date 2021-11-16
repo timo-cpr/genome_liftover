@@ -75,9 +75,9 @@ def liftover():
 	print("-- liftOver Done --")
 
 	# Convert BP to integer
-	data["BP"] = data["BP"].astype(int)
+	data["BP"] = data["BP"].astype("float")
 
-	if not args.keep_old:
+	if args.keep_old == "False":
 		# Drop old coordinates
 		data.drop(["CHR_old","BP_old"],axis=1,inplace=True)
 
@@ -94,7 +94,7 @@ if __name__ == "__main__":
 	parser.add_argument("--liftover", help="File with liftover chain", default = 'hg38ToHg19.over.chain.gz',required=True)
 	parser.add_argument("--infile", help="Summary data file perform liftOver on",required=True)
 	parser.add_argument("--outfile", help="Where to save the output file with liftover CHR,BP and STRAND", required=True)
-	parser.add_argument("--keep_old",help="If old coordinates should be kept. False: drop , True: keep", default = False, choices=[True, False])
+	parser.add_argument("--keep_old",help="If old coordinates should be kept. False: drop , True: keep", default = "False", choices=["True", "False"])
 	args = parser.parse_args()
 
 	# run script
