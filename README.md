@@ -1,5 +1,5 @@
 # genome_liftover
-Script for performing liftover between different genome builds of GWAS summary data.
+Script for performing liftover between different genome builds of GWAS summary data. //
 It is required to load a python module before running the script.
 eg. module load anaconda3/2021.05
 
