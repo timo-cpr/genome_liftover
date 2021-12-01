@@ -1,7 +1,7 @@
 # genome_liftover
 Script for performing liftover between different genome builds of GWAS summary data.  
 It is required to load a python module before running the script.  
-eg. module load anaconda3/2021.05
+eg. module load anaconda3/4.4.0
 
 ## Example for running code from command line:
 python genome_liftover.py --infile {INFILE_PATH} --outfile {OUTFILE_PATH} --idxCHR {INDEX_OF_CHR_COLUMN} --idxBP {INDEX_OF_BP_COLUMN} --liftover {PATH_TO_LIFTOVER_CHAIN_FILE}           
