@@ -75,7 +75,7 @@ def liftover():
 	print("-- liftOver Done --")
 
 	# Convert BP to integer
-	data["BP"] = data["BP"].astype("integer")
+	data["BP"] = data["BP"].astype(int)
 
 	if args.keep_old == "False":
 		# Drop old coordinates
